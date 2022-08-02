@@ -6,13 +6,9 @@ const Endpoints ={
     Login:'/login',
     REFRESH:'/refresh', // токин протухнет делаю его рефреш
 LOGOUT:'/logout',//когда надо выйти
-PROGITLE:'/progitle'//проверить  то что всё работает делаю запрос профиля
+PROFITLE:'/profitle'//проверить  то что всё работает делаю запрос профиля
    
 }
-   
-    return(
-
-    )
 }
 
 export default Endpoints;
