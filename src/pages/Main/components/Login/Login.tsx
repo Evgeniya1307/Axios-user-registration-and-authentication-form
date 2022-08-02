@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
 
 
 const Login =()=>{
+    const handleSubmit = (e:FormEvent) => { // в эту фу-ию будет приходить событие 
+
+    }
     return(
-        <div>Login</div>
+        <div>
+            <form onSubmit={handleSubmit}>
+
+            </form>
+        </div>
     )
 }
 
