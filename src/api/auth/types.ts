@@ -7,3 +7,6 @@ export interface ILoginRequest {
 
 
 // в ответ ожидаю 
+export interface ILoginResponse{
+   accessToken:string // с помощью него подписывать все запросы чтобы запросы приходили  
+}
