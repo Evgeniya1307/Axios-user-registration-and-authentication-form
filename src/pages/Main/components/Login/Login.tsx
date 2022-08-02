@@ -21,6 +21,7 @@ const[password, setPassword]=React.useState('');
           <label htmlFor="password">Password:</label>
           <input name="password" type="password" value={password} onChange={e=>setPassword(e.target.value)}/>
         </div>
+        <button>Sumbit</button>
       </form>
     </div>
   );
