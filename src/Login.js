@@ -47,10 +47,10 @@ const Login = () => {
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
-            setUser('');
-            setPwd('');
-            setSuccess(true);
+            setAuth({ user, pwd, roles, accessToken });//установить авторизацию
+            setUser('');//установить пользователя
+            setPwd('');//ус-ть пароль
+            setSuccess(true);//установить успех
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
@@ -67,7 +67,7 @@ const Login = () => {
 
     return (
         <>
-            {success ? (
+            {success ? ( //проверяю состояния успеха если успешно то покажу нижний элемент
                 <section>
                     <h1>Вы вошли в систему!</h1>
                     <br />
@@ -75,7 +75,7 @@ const Login = () => {
                         <a href="#">Go to Home</a>
                     </p>
                 </section>
-            ) : (
+            ) : ( //если по существу успех ложен он покажет нашу форму
                 <section>
                 {/* сообщение об ощибке и ссылка на ошибку */}
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> 
