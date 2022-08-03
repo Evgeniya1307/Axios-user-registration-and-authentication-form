@@ -4,11 +4,12 @@ import { createContext, useState } from "react";
 //соз-ла контекст и использую состояние
 const AuthContext = createContext({});
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => { //деструктурирую дочерние элементы
+   //соз-ла состояние
     const [auth, setAuth] = useState({});
 
     return (
-        <AuthContext.Provider value={{ auth, setAuth }}>
+        <AuthContext.Provider value={{ auth, setAuth }}>{/*значения передаю аунтефикация   */}
             {children}
         </AuthContext.Provider>
     )
