@@ -44,8 +44,8 @@ export interface AuthState {
         ...state,
         authData: {
           ...state.authData,
-          accessToken: action.payload,
-          isLoading: false,
+          accessToken: action.payload, //коогда логин  успешный то фолс
+          isLoading: false, 
           error:  null,
         }
       }),
@@ -81,7 +81,7 @@ export interface AuthState {
           error:  action.payload,
         }
       }),
-      logoutSuccess: (): AuthState => initialState,
+      logoutSuccess: (): AuthState => initialState, //возвращаю начальное состояние
     },
   })
   
