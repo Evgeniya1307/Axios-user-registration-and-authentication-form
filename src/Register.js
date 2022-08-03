@@ -97,6 +97,7 @@ const Register = () => {
                 </section>
             ) : (
                 <section>
+                {/*сообщение об ошибке и ссылка */}
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Register</h1>
                     <form onSubmit={handleSubmit}>
@@ -115,8 +116,8 @@ const Register = () => {
                             required
                             aria-invalid={validName ? "false" : "true"}
                             aria-describedby="uidnote"
-                            onFocus={() => setUserFocus(true)}
-                            onBlur={() => setUserFocus(false)}
+                            onFocus={() => setUserFocus(true)}// поле пользователя имеет фокус то тру
+                            onBlur={() => setUserFocus(false)}//размытие когда покидает поле
                         />
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
