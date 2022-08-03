@@ -11,24 +11,26 @@ const Register = () => {
     const userRef = useRef();//ссылка для пользовательского ввода,позволит ус-ть фокус на пользовательский ввод
     const errRef = useRef();//когда компонент загружжается ссылка на ошибку
 
-    const [user, setUser] = useState('');
-    const [validName, setValidName] = useState(false);
-    const [userFocus, setUserFocus] = useState(false);
+    const [user, setUser] = useState('');//состояние для пользователького поля
+    const [validName, setValidName] = useState(false);//действительное имя 
+    const [userFocus, setUserFocus] = useState(false);//фокус пользователя 
 
     const [pwd, setPwd] = useState('');
     const [validPwd, setValidPwd] = useState(false);
     const [pwdFocus, setPwdFocus] = useState(false);
 
-    const [matchPwd, setMatchPwd] = useState('');
-    const [validMatch, setValidMatch] = useState(false);
-    const [matchFocus, setMatchFocus] = useState(false);
-
-    const [errMsg, setErrMsg] = useState('');
+    const [matchPwd, setMatchPwd] = useState('');//для пароля 
+    const [validMatch, setValidMatch] = useState(false);//действителен пароль
+    const [matchFocus, setMatchFocus] = useState(false);//фокус пароля
+//состояние ошибок
+    const [errMsg, setErrMsg] = useState('');//если ошибка существует
     const [success, setSuccess] = useState(false);
 
+
+    //для ус-ки фокуса 
     useEffect(() => {
         userRef.current.focus();
-    }, [])
+    }, [])//когда компонент заг-ся и ус-вит фокус на этом вводе имени пользователя и ссылаться на этого пользователя
 
     useEffect(() => {
         setValidName(USER_REGEX.test(user));
