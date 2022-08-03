@@ -8,8 +8,8 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/; //�
 const REGISTER_URL = '/register';
 
 const Register = () => {
-    const userRef = useRef();
-    const errRef = useRef();
+    const userRef = useRef();//ссылка для пользовательского ввода,позволит ус-ть фокус на пользовательский ввод
+    const errRef = useRef();//когда компонент загружжается ссылка на ошибку
 
     const [user, setUser] = useState('');
     const [validName, setValidName] = useState(false);
