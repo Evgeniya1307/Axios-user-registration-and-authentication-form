@@ -8,7 +8,7 @@ const LOGIN_URL = '/auth';
 const Login = () => {
     const { setAuth } = useContext(AuthContext);
     const userRef = useRef();// ссылка на пользователя
-    const errRef = useRef();
+    const errRef = useRef();//когда компонент заг-с и есть ссылка на ошибку
 
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
@@ -16,7 +16,7 @@ const Login = () => {
     const [success, setSuccess] = useState(false);
 
     useEffect(() => {
-        userRef.current.focus();
+        userRef.current.focus();// ус-ла фокус на первом вводе
     }, [])
 
     useEffect(() => {
