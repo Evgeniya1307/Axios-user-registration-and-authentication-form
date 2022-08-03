@@ -2,7 +2,7 @@ import { useRef, useState, useEffect,useContext  } from "react";
 import AuthContext from "./context/AuthProvider";
 import axios from './api/axios';
 
-
+//константа url адреса входа /соответсвует серверной части созд-ой 
 const LOGIN_URL = '/auth';
 
 const Login = () => {
