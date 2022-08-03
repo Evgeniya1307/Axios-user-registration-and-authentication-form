@@ -119,7 +119,7 @@ const Register = () => {
                             onFocus={() => setUserFocus(true)}// поле пользователя имеет фокус то тру
                             onBlur={() => setUserFocus(false)}//размытие когда покидает поле
                         />
-                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>{/*истене ли фокус пользователя и существует ли состояние пользователя если оно не пустое,если есть пустое поле не отображую инструкцию жду хотябы 1 символ,а затем если нет допустимого имени если есть действительное имя конечно продолжаю также и скрою инструкцию,если выполнтся требования инструкции показаны в противном случае скорется с экрана с абсолютныой позиции в сss  */}
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 to 24 characters.<br />
                             Must begin with a letter.<br />
