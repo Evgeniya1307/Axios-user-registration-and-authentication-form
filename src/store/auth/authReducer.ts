@@ -3,9 +3,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 //интерфейс для редюсера для слайса
 export interface AuthState {
     authData: {
-      accessToken: string | null //храню то  что получила при аторизации 
-      isLoading: boolean
-      error:  string | null,
+      accessToken: string | null //храню то  что получила при аторизации ,если accessTokenе заполнен то пользователь авторизован
+      isLoading: boolean //если загрузка
+      error:  string | null,//ошибки
     }
     profileData: {
       profile: string | null,
@@ -14,7 +14,8 @@ export interface AuthState {
     }
   }
   
-  const initialState: AuthState = {
+  //начальный стейт
+  const initialState: AuthState = { 
     authData: {
       accessToken: null,
       isLoading: false,
