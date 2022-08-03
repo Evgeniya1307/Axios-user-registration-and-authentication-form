@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 
+//контекстный API
+//соз-ла контекст и использую состояние
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
