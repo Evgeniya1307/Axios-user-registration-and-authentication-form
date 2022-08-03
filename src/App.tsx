@@ -1,16 +1,11 @@
-import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Main from './pages/Main';
-import Dashboard from './pages/Dashboard';
+import Login from './Login';
 
 function App() {
   return (
-    <Router>
-<Routes>
-  <Route path='/' element={<Main/>}/> 
-  <Route path='/dashboard' element={<Dashboard/>}/>
-  </Routes>
-    </Router>
+    <main className="App">
+<Login/>
+
+    </main>
   );
 }
 
