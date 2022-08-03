@@ -15,7 +15,7 @@ const Login = () => {
     const [user, setUser] = useState('');// пользователь
     const [pwd, setPwd] = useState('');//пароль
     const [errMsg, setErrMsg] = useState('');//сообщения об ошибке
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState(false);//сообщения об успехе когда пойду с помощью реагирующего маршрутизатора на страницу по выбору
 
     useEffect(() => {
         userRef.current.focus();// ус-ла фокус на первом вводе
