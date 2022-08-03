@@ -31,7 +31,8 @@ const Login = () => {
         setErrMsg('');
     }, [user, pwd])
 
-    const handleSubmit = async (e) => {
+    //дискриптор отправки асинхронная фу-ия
+    const handleSubmit = async (e) => { //получит событие а затем использовать событие чтобы небыло перезагрузки страницы предотвращение событий по умолчанию
         e.preventDefault();
 
         try {
@@ -79,7 +80,7 @@ const Login = () => {
                 {/* сообщение об ощибке и ссылка на ошибку */}
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> 
                     <h1>Войти</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>{/*обработчик отправки дискриптор отправки */}
                         <label htmlFor="username">Username:</label> {/*метка для каждого ввода одно уведомление атоматом получаю атрибут htmlFor он соответвтвует id ввода и имя пол-ля и внутри метки*/}
                        {/*ввод для имени пол-ля*/}
                         <input 
