@@ -76,15 +76,17 @@ const Login = () => {
                 </section>
             ) : (
                 <section>
-                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Sign In</h1>
+                {/* сообщение об ощибке и ссылка на ошибку */}
+                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> 
+                    <h1>Войти</h1>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">Username:</label>
-                        <input
+                        <label htmlFor="username">Username:</label> {/*метка для каждого ввода одно уведомление атоматом получаю атрибут htmlFor он соответвтвует id ввода и имя пол-ля и внутри метки*/}
+                       {/*ввод для имени пол-ля*/}
+                        <input 
                             type="text"
                             id="username"
-                            ref={userRef}
-                            autoComplete="off"
+                            ref={userRef}//фокус на ввод
+                            autoComplete="off" //автозаполнение отключила
                             onChange={(e) => setUser(e.target.value)}
                             value={user}
                             required
@@ -98,13 +100,13 @@ const Login = () => {
                             value={pwd}
                             required
                         />
-                        <button>Sign In</button>
+                        <button>Войти</button>
                     </form>
                     <p>
-                        Need an Account?<br />
+                    Нужна учетная запись?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="#">Sign Up</a>
+                            <a href="#">Зарегистрироваться</a>
                         </span>
                     </p>
                 </section>
@@ -114,3 +116,4 @@ const Login = () => {
 }
 
 export default Login;
+
