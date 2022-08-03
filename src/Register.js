@@ -32,9 +32,11 @@ const Register = () => {
         userRef.current.focus();
     }, [])//когда компонент заг-ся и ус-вит фокус на этом вводе имени пользователя и ссылаться на этого пользователя
 
+
+    //к имени пользователя тут проверяю имя пользователя 
     useEffect(() => {
         setValidName(USER_REGEX.test(user));
-    }, [user])
+    }, [user])//состояние пользователя в массиве зависимостей
 
     useEffect(() => {
         setValidPwd(PWD_REGEX.test(pwd));
