@@ -87,8 +87,8 @@ const Login = () => {
                             id="username"
                             ref={userRef}//фокус на ввод
                             autoComplete="off" //автозаполнение отключила
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setUser(e.target.value)}//фу-ия внутри свяжет сост-ие пол-ля 
+                            value={user} // состояние пользователя
                             required
                         />
 
