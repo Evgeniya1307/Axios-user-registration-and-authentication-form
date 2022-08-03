@@ -12,13 +12,13 @@ export const loginUser =
 
         const res = await api.auth.login(data)
 
-        dispatch(loginSucess(res.data.accessToken))
+        dispatch(loginSucess(res.data.accessToken))//прошёл успешно и редюсер передаю accessToken
         dispatch(getProfile())
         
       } catch (e: any) {
         console.error(e)
 
-        dispatch(loginFailure(e.message))
+        dispatch(loginFailure(e.message))// если ошибка то loginFailure и передаю сообщение 
       }
     }
 
