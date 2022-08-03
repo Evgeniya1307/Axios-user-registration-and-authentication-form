@@ -31,7 +31,7 @@ export interface AuthState {
   //создала редьюсер
   export const authReducer = createSlice({
     name: 'auth',
-    initialState,
+    initialState, //описала начальное состояние и описала его изменения
     reducers: {
       loginStart: (state): AuthState => ({
         ...state,
