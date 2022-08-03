@@ -10,9 +10,11 @@ const Login = () => {
     const userRef = useRef();// ссылка на пользователя
     const errRef = useRef();//когда компонент заг-с и есть ссылка на ошибку
 
-    const [user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
+
+    //состояния 
+    const [user, setUser] = useState('');// пользователь
+    const [pwd, setPwd] = useState('');//пароль
+    const [errMsg, setErrMsg] = useState('');//сообщения об ошибке
     const [success, setSuccess] = useState(false);
 
     useEffect(() => {
