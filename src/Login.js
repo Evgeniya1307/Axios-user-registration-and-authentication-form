@@ -68,7 +68,7 @@ const Login = () => {
         <>
             {success ? (
                 <section>
-                    <h1>You are logged in!</h1>
+                    <h1>Вы вошли в систему!</h1>
                     <br />
                     <p>
                         <a href="#">Go to Home</a>
@@ -87,14 +87,14 @@ const Login = () => {
                             id="username"
                             ref={userRef}//фокус на ввод
                             autoComplete="off" //автозаполнение отключила
-                            onChange={(e) => setUser(e.target.value)}//фу-ия внутри свяжет сост-ие пол-ля 
-                            value={user} // состояние пользователя
-                            required
+                            onChange={(e) => setUser(e.target.value)}//фу-ия внутри свяжет сост-ие пол-ля и это сделает его котролируемым вводом
+                            required//требуется 
                         />
 
+                        {/*пароль */}
                         <label htmlFor="password">Password:</label>
                         <input
-                            type="password"
+                            type="password" //точки при заполнении
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
@@ -105,8 +105,8 @@ const Login = () => {
                     <p>
                     Нужна учетная запись?<br />
                         <span className="line">
-                            {/*put router link here*/}
-                            <a href="#">Зарегистрироваться</a>
+                            {/*реагирующий маршрутизатор ссылка заполнитель которая введёт к регистрационной форме */}
+                            <a href="#">Зарегистрироваться</a>{/*ссылка для регистрации */}
                         </span>
                     </p>
                 </section>
