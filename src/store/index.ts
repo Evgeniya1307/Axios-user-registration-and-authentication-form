@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import logger from "redux-logger";
-
+import authReducer from "./auth/authReducer";
 
 // общие настройки для redux-store
 export const store = configureStore({
     //мои созданные редюсеры
     reducer:{
-        //autch:autchReducer,
+        autch:authReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(...(process.env.NODE_ENV !== 'production' ? [logger] : [])),
 })
