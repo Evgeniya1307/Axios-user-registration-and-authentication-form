@@ -5,7 +5,7 @@ import { AxiosPromise } from "axios"
 
 //асинхронная функция отправляю запрос на логин
 export const loginUser =
-  (data: ILoginRequest) =>
+  (data: ILoginRequest) => //получаю данные с логином и паролем
     async (dispatch: Dispatch<any>): Promise<void> => {
       try {
         dispatch(loginStart())
