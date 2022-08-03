@@ -35,7 +35,8 @@ const Login = () => {
     const handleSubmit = async (e) => { //получит событие а затем использовать событие чтобы небыло перезагрузки страницы предотвращение событий по умолчанию
         e.preventDefault();
 
-        try {
+        try { 
+            //определение ответа и внуть передаю url адрес для входа который присоеденён к базовому url-адресу
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({ user, pwd }),
                 {
@@ -51,7 +52,7 @@ const Login = () => {
             setUser('');//установить пользователя
             setPwd('');//ус-ть пароль
             setSuccess(true);//установить успех
-        } catch (err) {
+        } catch (err) { //gjkexftn jib,r4e 
             if (!err?.response) {
                 setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
