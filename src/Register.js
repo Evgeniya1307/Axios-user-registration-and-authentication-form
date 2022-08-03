@@ -38,14 +38,16 @@ const Register = () => {
         setValidName(USER_REGEX.test(user));
     }, [user])//состояние пользователя в массиве зависимостей
 
+    //уведомление о пароле,есть состояние пароля в массиве зависимостей и регистрирую чтобы увидеть дейсствительно ли 
     useEffect(() => {
         setValidPwd(PWD_REGEX.test(pwd));
-        setValidMatch(pwd === matchPwd);
-    }, [pwd, matchPwd])
+        setValidMatch(pwd === matchPwd);// подтверждение с помощью совпадения 
+    }, [pwd, matchPwd])// пароль и соответсвтвующ пароль
 
+    //сообщение об ошибке 
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd])
+    }, [user, pwd, matchPwd])//пользователь каждый раз меняет состояние одной из 3-х частей
 
     const handleSubmit = async (e) => {
         e.preventDefault();
