@@ -6,7 +6,7 @@ import axios from './api/axios';
 const LOGIN_URL = '/auth';
 
 const Login = () => {
-    const { setAuth } = useContext(AuthContext);
+    const { setAuth } = useContext(AuthContext);// вытаскиваю что нужно для входа в систему,когда войду в систем уст-лю новое состояние аутенфикации и сохраню в глобальном контексте 
     const userRef = useRef();// ссылка на пользователя
     const errRef = useRef();//когда компонент заг-с и есть ссылка на ошибку
 
