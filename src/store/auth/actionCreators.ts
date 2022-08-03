@@ -8,7 +8,7 @@ export const loginUser =
   (data: ILoginRequest) => //получаю данные с логином и паролем
     async (dispatch: Dispatch<any>): Promise<void> => {
       try {
-        dispatch(loginStart())
+        dispatch(loginStart())//действие по логину началось
 
         const res = await api.auth.login(data)
 
