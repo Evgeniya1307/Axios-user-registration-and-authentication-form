@@ -28,6 +28,7 @@ export interface AuthState {
     }
   }
   
+  //создала редьюсер
   export const authReducer = createSlice({
     name: 'auth',
     initialState,
