@@ -38,31 +38,31 @@ const Login = () => {
         try { 
             //определение ответа и внуть передаю url адрес для входа который присоеденён к базовому url-адресу
             const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ user, pwd }),
+                JSON.stringify({ user, pwd }),//передаю пользователя и пароль то что ожидает API
                 {
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'application/json' }, //объект внутри свойство Content-Type и для него значение 
                     withCredentials: true
                 }
             );
-            console.log(JSON.stringify(response?.data));
+            console.log(JSON.stringify(response?.data));//данные должны быть внутри свойства данных ответа
             //console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });//установить авторизацию
+            setAuth({ user, pwd, roles, accessToken });//установить авторизацию передаю пользователю пароль(делаю роли а затем токен доступа)
             setUser('');//установить пользователя
             setPwd('');//ус-ть пароль
             setSuccess(true);//установить успех
-        } catch (err) { //gjkexftn jib,r4e 
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password');
-            } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
+        } catch (err) { //логика на ошибки
+            if (!err?.response) { //ищю ответ от ошибки если ответа нет вообще но есть ошибка тогда ус-ию сообщение об ошибке
+                setErrMsg('No Server Response');//нет ответа от сервера
+            } else if (err.response?.status === 400) { //для статуса если равно 400 дам конректный ответ 
+                setErrMsg('Missing Username or Password'); //сообщение об ошибке отсутвие имени пользователя или пароля
+            } else if (err.response?.status === 401) { //коды ошибок
+                setErrMsg('Unauthorized');// сообщения неавтоизованный
             } else {
-                setErrMsg('Login Failed');
+                setErrMsg('Login Failed');//вход в систему не удался
             }
-            errRef.current.focus();
+            errRef.current.focus();//ус-ла фокус чтобы программа чтения с экрана могла прочитат инфу где был атрибут aria live чтобы объявился немедленно
         }
     }
 
