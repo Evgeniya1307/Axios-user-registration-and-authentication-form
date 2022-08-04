@@ -73,21 +73,21 @@ setSuccess(true);
             );
             //удали console.logs перед развертыванием
             console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response))
+            //console.log(JSON.stringify(response))чтобы получить полный ответ
             setSuccess(true);
-            //clear state and controlled inputs
+            //состояние и контролируемые входы
             setUser('');
             setPwd('');
             setMatchPwd('');
         } catch (err) {
-            if (!err?.response) {
-                setErrMsg('Нет ответа сервера');
-            } else if (err.response?.status === 409) {
-                setErrMsg('Имя пользователя принято');
-            } else {
+            if (!err?.response) { //если нет ответа об ошибке,(мало ли интернет потеряли)
+                setErrMsg('Нет ответа сервера');//тогда ответ сообщение об ошибке
+            } else if (err.response?.status === 409) {//проверяю статус если получу 409 означает что имя пользователя которое пыталась отправить уже занято 
+                setErrMsg('Имя пользователя занято');//сообщение об ошибке
+            } else { //общая ошибка
                 setErrMsg('Регистрация не удалась')
             }
-            errRef.current.focus();
+            errRef.current.focus();// фокус в этом поле ошибки для программ чтения с экрана
         }
     }
 
