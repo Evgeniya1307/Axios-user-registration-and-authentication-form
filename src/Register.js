@@ -51,8 +51,8 @@ const Register = () => {
 
 
     //функция событие отправки 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (e) => { //обработай sumbit ус-ви его равным фу-ии это асинхронная фу-ия
+        e.preventDefault();//событие получит е.предотвращает дефолт и сохраняет первое что нужно (так как можно взломать кнопку консоли ) 
         // if button enabled with JS hack
         const v1 = USER_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
