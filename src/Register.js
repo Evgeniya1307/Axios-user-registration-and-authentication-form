@@ -64,7 +64,7 @@ console.log(user,pwd);
 setSuccess(true);
 
         try {
-            const response = await axios.post(REGISTER_URL,
+            const response = await axios.post(REGISTER_URL, //ответ которы получу от axios
                 JSON.stringify({ user, pwd }),
                 {
                     headers: { 'Content-Type': 'application/json' },
