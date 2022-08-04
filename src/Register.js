@@ -172,7 +172,7 @@ const Register = () => {
                             Должен соответствовать первому полю ввода пароля.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Зарегистрироваться</button>{/*если нет дествительного имени или нет действительного пароля или нет действительного совпадения тогда disabled яв-ся истинным, иначе ложным и тогда получу инструкции и текстовая надпись на кнопке отключена      */}
                     </form>
                     <p>
                     Уже зарегистрирован?<br />
