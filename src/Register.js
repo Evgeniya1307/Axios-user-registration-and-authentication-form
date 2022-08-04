@@ -99,7 +99,7 @@ const Register = () => {
                 <section>
                 {/*сообщение об ошибке и ссылка */}
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
+                    <h1>Регистрация</h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
@@ -121,9 +121,9 @@ const Register = () => {
                         />
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>{/*истене ли фокус пользователя и существует ли состояние пользователя если оно не пустое,если есть пустое поле не отображую инструкцию жду хотябы 1 символ,а затем если нет допустимого имени если есть действительное имя конечно продолжаю также и скрою инструкцию,если выполнтся требования инструкции показаны в противном случае скорется с экрана с абсолютныой позиции в сss  */}
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
+                            от 4 до 24 символов.<br />
+                            Должен начинаться с буквы.<br />
+                            Допускаются буквы, цифры, символы подчеркивания, дефисы.
                         </p>
 
 
@@ -139,18 +139,18 @@ const Register = () => {
                             value={pwd}
                             required
                             aria-invalid={validPwd ? "false" : "true"} //смотрит на действительны пароль который описала
-                            aria-describedby="pwdnote"
+                            aria-describedby="pwdnote" //пароль описывает направления для поля пароля с арией
                             onFocus={() => setPwdFocus(true)}
                             onBlur={() => setPwdFocus(false)}
                         />
                         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>{/*фокус и размытие чтобы увидеть если нахожусь в этом поле или нет */}
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            8 to 24 characters.<br />
-                            Must include uppercase and lowercase letters, a number and a special character.<br />
-                            Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                            <FontAwesomeIcon icon={faInfoCircle} />{/*значок с информацией,есть чёткие указания инструкция    */}
+                            от 8 до 24 символов.<br />
+                            Должен содержать заглавные и строчные буквы, цифру и специальный символ.<br />
+                            Разрешенные специальные символы:<span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>{/*поместила символы  в диапазон и использую атрибут метки aria чтобы прогграмма чтения с экрана могла прочитать описание каждого спец символа  */}
                         </p>
 
-
+{/*подтверждение пароля почти таже логика значки но разница должно быть действительное совпадение пароля но и совпадающее состояние пароля существовать когда пришла  к отображению красного крестика эта таже логика  */}
                         <label htmlFor="confirm_pwd">
                             Confirm Password:
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
@@ -169,16 +169,16 @@ const Register = () => {
                         />
                         <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            Must match the first password input field.
+                            Должен соответствовать первому полю ввода пароля.
                         </p>
 
                         <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
                     <p>
-                        Already registered?<br />
+                    Уже зарегистрирован?<br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="#">Sign In</a>
+                            <a href="#">Войти</a>
                         </span>
                     </p>
                 </section>
