@@ -103,7 +103,7 @@ const Register = () => {
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
-                            <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />{/*вытягиваю шрифт и какой значок ис-ть  */}
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
                         <input
@@ -138,7 +138,7 @@ const Register = () => {
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
                             required
-                            aria-invalid={validPwd ? "false" : "true"}
+                            aria-invalid={validPwd ? "false" : "true"} //смотрит на действительны пароль который описала
                             aria-describedby="pwdnote"
                             onFocus={() => setPwdFocus(true)}
                             onBlur={() => setPwdFocus(false)}
