@@ -49,6 +49,8 @@ const Register = () => {
         setErrMsg('');
     }, [user, pwd, matchPwd])//пользователь каждый раз меняет состояние одной из 3-х частей
 
+
+    //функция событие отправки 
     const handleSubmit = async (e) => {
         e.preventDefault();
         // if button enabled with JS hack
@@ -100,7 +102,7 @@ const Register = () => {
                 {/*сообщение об ошибке и ссылка */}
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Регистрация</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}> {/*событие отправки дескриптор отправки   */}
                         <label htmlFor="username">
                             Username:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />{/*вытягиваю шрифт и какой значок ис-ть  */}
@@ -172,7 +174,7 @@ const Register = () => {
                             Должен соответствовать первому полю ввода пароля.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Зарегистрироваться</button>{/*если нет дествительного имени или нет действительного пароля или нет действительного совпадения тогда disabled яв-ся истинным, иначе ложным и тогда получу инструкции и текстовая надпись на кнопке отключена      */}
+                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Зарегистрироваться</button>{/*если нет дествительного имени или нет действительного пароля или нет действительного совпадения тогда disabled яв-ся истинным, иначе ложным и тогда получу инструкции и текстовая надпись на кнопке отключена все три поля должны быть действительными    */}
                     </form>
                     <p>
                     Уже зарегистрирован?<br />
