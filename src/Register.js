@@ -65,9 +65,9 @@ setSuccess(true);
 
         try {
             const response = await axios.post(REGISTER_URL, //ответ которы получу от axios ус-ию ответ равный ожиданию (ук-ю url адрес регитсрации )
-                JSON.stringify({ user, pwd }),//данные которые отправляем пользователь и пароль
+                JSON.stringify({ user, pwd }),//данные которые отправляем пользователь и пароль он будет деструктурирован на серверной части
                 {
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'application/json' },//ук-ю заголовки а заголовки имеют свой собственный объект и учётную запись и ус-ть как true
                     withCredentials: true
                 }
             );
