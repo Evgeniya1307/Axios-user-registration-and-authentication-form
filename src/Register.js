@@ -143,7 +143,7 @@ const Register = () => {
                             onFocus={() => setPwdFocus(true)}
                             onBlur={() => setPwdFocus(false)}
                         />
-                        <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
+                        <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>{/*фокус и размытие чтобы увидеть если нахожусь в этом поле или нет */}
                             <FontAwesomeIcon icon={faInfoCircle} />
                             8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, a number and a special character.<br />
