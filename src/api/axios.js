@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-export default axios.create({
+export default axios.create({ //позволяет ус-ть базовый url адрес для полного приложения 
     baseURL: 'http://localhost:3500' //базовый url 
 });

@@ -53,13 +53,16 @@ const Register = () => {
     //функция событие отправки 
     const handleSubmit = async (e) => { //обработай sumbit ус-ви его равным фу-ии это асинхронная фу-ия
         e.preventDefault();//событие получит е.предотвращает дефолт и сохраняет первое что нужно (так как можно взломать кнопку консоли ) 
-        // if button enabled with JS hack
+        // если кнопка включена с помощью взлома JS
         const v1 = USER_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
-        if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
+        if (!v1 || !v2) { 
+            setErrMsg("Неверный ввод");//если проверка из одних ложна то сообщение об ошибке
             return;
         }
+console.log(user,pwd);
+setSuccess(true);
+
         try {
             const response = await axios.post(REGISTER_URL,
                 JSON.stringify({ user, pwd }),
@@ -68,7 +71,7 @@ const Register = () => {
                     withCredentials: true
                 }
             );
-            // TODO: remove console.logs before deployment
+            //удали console.logs перед развертыванием
             console.log(JSON.stringify(response?.data));
             //console.log(JSON.stringify(response))
             setSuccess(true);
@@ -78,11 +81,11 @@ const Register = () => {
             setMatchPwd('');
         } catch (err) {
             if (!err?.response) {
-                setErrMsg('No Server Response');
+                setErrMsg('Нет ответа сервера');
             } else if (err.response?.status === 409) {
-                setErrMsg('Username Taken');
+                setErrMsg('Имя пользователя принято');
             } else {
-                setErrMsg('Registration Failed')
+                setErrMsg('Регистрация не удалась')
             }
             errRef.current.focus();
         }
@@ -90,14 +93,14 @@ const Register = () => {
 
     return (
         <>
-            {success ? (
+            {success ? ( //проверка на успешное состояние true : false 
                 <section>
-                    <h1>Success!</h1>
+                    <h1>Успех!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="#">Войти</a> {/*ссылка на вход в систему */}
                     </p>
                 </section>
-            ) : (
+            ) : ( //если неверно отобразить этот раздел 
                 <section>
                 {/*сообщение об ошибке и ссылка */}
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
