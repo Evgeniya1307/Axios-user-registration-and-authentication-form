@@ -5,7 +5,7 @@ import axios from './api/axios';
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/; // пользовательское регулрное выражение проверить имя пользователя(нач-ся с нижнего или верхнего регистра от3-23символа могут быть строчными или прописными,от4-24 символов)
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/; //регулярное выражение пароля (как минимум 1строчная буква 1прописная1цифра1спец символ от8-24символов)
-const REGISTER_URL = '/register';
+const REGISTER_URL = '/register'; //установила базовый url регистрации адресм в бэкенд API
 
 const Register = () => {
     const userRef = useRef();//ссылка для пользовательского ввода,позволит ус-ть фокус на пользовательский ввод
@@ -64,8 +64,8 @@ console.log(user,pwd);
 setSuccess(true);
 
         try {
-            const response = await axios.post(REGISTER_URL, //ответ которы получу от axios
-                JSON.stringify({ user, pwd }),
+            const response = await axios.post(REGISTER_URL, //ответ которы получу от axios ус-ию ответ равный ожиданию (ук-ю url адрес регитсрации )
+                JSON.stringify({ user, pwd }),//данные которые отправляем пользователь и пароль
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
