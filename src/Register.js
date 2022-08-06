@@ -3,6 +3,7 @@ import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from './api/axios';
 
+
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/; // пользовательское регулрное выражение проверить имя пользователя(нач-ся с нижнего или верхнего регистра от3-23символа могут быть строчными или прописными,от4-24 символов)
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/; //регулярное выражение пароля (как минимум 1строчная буква 1прописная1цифра1спец символ от8-24символов)
 const REGISTER_URL = '/register'; //установила базовый url регистрации адресм в бэкенд API

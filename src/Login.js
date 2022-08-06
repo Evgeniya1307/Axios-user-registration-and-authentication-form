@@ -2,6 +2,7 @@ import { useRef, useState, useEffect,useContext  } from "react";
 import AuthContext from "./context/AuthProvider";
 import axios from './api/axios';
 
+
 //константа url адреса входа /соответсвует серверной части созд-ой 
 const LOGIN_URL = '/auth';
 
@@ -11,11 +12,13 @@ const Login = () => {
     const errRef = useRef();//когда компонент заг-с и есть ссылка на ошибку
 
 
+
     //состояния 
     const [user, setUser] = useState('');// пользователь
     const [pwd, setPwd] = useState('');//пароль
     const [errMsg, setErrMsg] = useState('');//сообщения об ошибке
     const [success, setSuccess] = useState(false);//сообщения об успехе когда пойду с помощью реагирующего маршрутизатора на страницу по выбору
+
 
 
 //ис-ю эффект дважды,в первый раз установить фокус на первом вводе когда компонент заг-ся  
@@ -34,6 +37,9 @@ const Login = () => {
     //дискриптор отправки асинхронная фу-ия
     const handleSubmit = async (e) => { //получит событие а затем использовать событие чтобы небыло перезагрузки страницы предотвращение событий по умолчанию
         e.preventDefault();
+
+        
+
 
         try { 
             //определение ответа и внуть передаю url адрес для входа который присоеденён к базовому url-адресу
